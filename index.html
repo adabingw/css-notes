@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CSS NOTES</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href='./style.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Corinthia&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="col-lg-3">
+      </div>
+    <div class="col-lg-6">
+  <div class="share" id = 'home'>
+    <a href="https://github.com/adabingw">MY GITHUB!</a>
+    <a href="https://awesome-animated-ray.glitch.me">HTML!</a>
+    <a href="https://exultant-sleet-radio.glitch.me">BOOTSTRAP!</a>
+  </div> <br> <br>
+
+  <div class = "back">
+    <a href = "#home"> BACK UP!! </a>
+  </div>
+
+  <img src='https://c4.wallpaperflare.com/wallpaper/143/291/637/anime-komi-can-t-communicate-hd-wallpaper-preview.jpg' class = "center"/>
+  <h1 class = 'header'>Copenhagen Street Style (CSS)</h1>
+
+  <p style='text-align: center !important'>I feel like it's super meta to type my CSS notes using CSS</p>
+
+  <section id = 'table-of-contents'>
+    <h2 class = 'header'> Table of Continents </h2>
+    <ol>
+      <a href = "#syntax-and-selectors"> <li> Syntax and Selectors </li> </a>
+      <a href = "#visual-rule"> <li> Visual Rules </li> </a>
+      <a href = "#box-model"> <li> The Box Model </li> </a>
+      <a href = "#dis-and-pos"> <li> Display and Positioning </li> </a>
+      <a href = "#colour"> <li> Colours </li> </a>
+      <a href = "#typography"> <li> Typography </li> </a>
+    </ol> <br> <br>
+  </section>
+
+  <section id = syntax-and-selectors>
+    <img src='https://wallpapercave.com/wp/wp10296845.jpg' class = "center"/>
+  <h2 class = 'header'> Syntax and Selectors </h2>
+
+    <ul>
+      <a href = "#start"> <li> Setup and Syntax </li> </a>
+      <a href = "#selectors"> <li> Selectors </li> </a>
+    </ul>
+
+    <h4 id = start> CSS Anatomy </h4>
+      <p>
+        There are 2 different styles: <strong>CSS Inline</strong> and <strong>CSS Rulesets</strong> <br>
+        Here's a picture of the anatomy lol I don't feel like copying it down: <br>
+         <img src='https://i.imgur.com/qZ4eJtq.jpg' class = "center"/>
+        <h5>Ruleset Terms</h5>
+        <ul>
+          <li><em>Selector</em>—The beginning of the ruleset used to target the element that will be styled.</li>
+          <li><em>Declaration Block</em>—The code in-between (and including) the curly braces ({ }) that contains the CSS declaration(s).</li>
+          <li><em>Declaration</em>—The group name for a property and value pair that applies a style to the selected element.</li>
+          <li><em>Property</em>—The first part of the declaration that signifies what visual characteristic of the element is to be modified.</li>
+          <li><em> Value</em>—The second part of the declaration that signifies the value of the property.</li>
+        </ul>
+
+        <h5>Inline Style Terms:</h5>
+        <ul>
+          <li><em>Opening Tag</em>—The start of an HTML element. This is the element that will be styled.</li>
+          <li><em>Attribute</em>—The style attribute is used to add CSS inline styles to an HTML element.</li>
+          <li><em>Declaration</em>—The group name for a property and value pair that applies a style to the selected element.</li>
+          <li><em>Property</em>—The first part of the declaration that signifies what visual characteristic of the element is to be modified.</li>
+          <li><em> Value</em>—The second part of the declaration that signifies the value of the property.</li>
+        </ul>
+
+      </p>
+
+      <h4> Inline Styles </h4>
+      <p>
+        Although CSS is a different language than HTML, it’s possible to write CSS code directly within HTML code using inline styles.
+        <br> <br>
+        To style an HTML element, you can add the <strong>style</strong> attribute directly to the opening tag. After you add the attribute, you can set it equal to the CSS style(s) you’d like applied to that element. </p>
+
+        <br><br>
+        <p class = 'code'>
+        &lt;p&gt; style='color: darkseagreen; font-size: 15px;'>I'm learning to code!&lt;/p&gt; </p>
+        <p>
+        <br><br> WHICH LOOKS LIKE:
+
+        <p style='color: darkseagreen; font-size: 15px;'>I'm learning to code!</p>
+      </p>
+
+      <h4> Internal Stylesheet </h4>
+      <p>
+        INLINE STYLES SUCK AND IS MESSY AND UGLY!!
+        <br> <br>
+        Fortunately, HTML allows you to write CSS code in its own dedicated section with a <strong>&lt;style></strong> element nested inside of the <strong>&lt;head></strong> element. The CSS code inside the <strong>&lt;style></strong> element is often referred to as an internal stylesheet. <br> <br>
+
+        To create an internal stylesheet, a <strong>&lt;style></strong> element must be placed inside of the <strong>&lt;head></strong> element. <br> <br>
+
+        After adding opening and closing <strong>&lt;style></strong> tags in the head section, you can begin writing CSS code. </p>
+
+        <p class = 'code'>
+        &lt;head> <br>
+        &lt;style> <br>
+          p { <br>
+            color: red; <br>
+            font-size: 20px; <br>
+          } <br>
+        &lt;/style> <br>
+        &lt;/head> <br> <br>
+        </p>
+        <p>
+        The CSS code in the example above changes the color of all paragraph text to red and also changes the size of the text to 20 pixels. Note how the syntax of the CSS code matches (for the most part) the syntax you used for inline styling. The main difference is that you can specify which elements to apply the styling.
+
+      </p>
+
+      <h4> External Stylesheet </h4>
+      <p>
+        Developers avoid mixing code by storing HTML and CSS code in separate files (HTML files contain only HTML code, and CSS files contain only CSS code). <br> <br>
+
+        You can create an external stylesheet by using the .css file name extension, like so: <strong>style.css</strong> <br> <br>
+
+        With an external stylesheet, you can write all the CSS code needed to style a page without sacrificing the readability and maintainability of your HTML file. <br>
+
+      </p>
+
+      <h4>Linking the CSS File</h4>
+      <p>
+        When HTML and CSS codes are in separate files, the files must be linked. Otherwise, the HTML file won’t be able to locate the CSS code, and the styling will not be applied. <br> <br>
+
+        You can use the &lt;link> element to link HTML and CSS files together. The &lt;link> element must be placed within the head of the HTML file. <br> <br> 
+
+        If the CSS file is stored in the same directory as your HTML file, then you can specify a relative path instead of a URL, like so: <br> <br>
+        <p class = 'code'>
+        &lt;link href='./style.css' rel='stylesheet'> </p> 
+      </p> <br>
+      
+      <h4 id = selectors>Type</h4>
+      <p>
+        A selector is used to target the specific HTML element(s) to be styled by the declaration. One selector you may already be familiar with is the type selector. Just like its name suggests, the type selector matches the type of the element in the HTML document. <br> <br> </p>
+        <p class = 'code'>
+        h1 { <br>
+        color: maroon; <br>
+        } <br> <br> </p>
+        <p>
+        <strong>Notes: </strong>
+
+        <ul>
+
+        <li> The type selector does not include the angle brackets.</li>
+        <li> Since element types are often referred to by their opening tag name, the type selector is sometimes referred to as the tag name or element selector. </li>
+        
+        </ul>
+        
+        <br> <br>
+
+      </p>
+
+      <h4>Universal</h4>
+      <p>
+        The universal selector selects all elements of any type. <br> <br>
+
+        The universal selector uses the * character in the same place where you specified the type selector in a ruleset, like so: <br> <br>
+        <p class = 'code'>
+        * { <br>
+        font-family: Verdana; <br>
+        } <br> </p>
+        
+        <br> <br>
+
+      </p>
+
+      <h4>Class</h4>
+      <p>
+        When working with HTML and CSS a class attribute is one of the most common ways to select an element. <br> <br>
+        <p class = 'code'>
+        &lt;p class='brand'>Sole Shoe Company&lt;/p> <br> <br> </p>
+        <p>
+        The paragraph element in the example above has a class attribute within the opening tag of the &lt;p> element. The class attribute is set to <strong>'brand'</strong>. To select this element using CSS, we can create a ruleset with a class selector of <strong>.brand</strong>. <br> <br> </p>
+        <p class = 'code'>
+        <strong> .brand </strong> { <br>
+        font-family: Verdana; <br>
+        } <br> </p>
+        
+        <br> <br>
+
+      <h4>ID</h4>
+      <p>
+        In contrast to class which accepts multiple values, and can be used broadly throughout an HTML document, an element’s id can only have a single value, and only be used once per page. <br> <br>
+
+        To select an element’s ID with CSS, we prepend the id name with a number sign (#). For instance, if we wanted to select the HTML element in the example above, it would look like this: <br> <br>
+        <p class = 'code'>
+        #large-title { <br>
+ 
+        } <br> <br> </p>
+
+
+      </p>
+
+      <h4>Attribute</h4>
+      <p>
+        The attribute selector can be used to target HTML elements that already contain attributes. Elements of the same type can be targeted differently by their attribute or attribute value. This alleviates the need to add new code, like the class or id attributes. <br> <br>
+
+        Attributes can be selected similarly to types, classes, and IDs. <br> <br> </p>
+        <p class = 'code'>
+        [href]{
+        color: magenta;
+        } <br> </p>
+        
+        <p>
+        <br> <br>
+        And it can get more granular from there by adding type and/or attribute values. One way is by using <strong>type[attribute *= value]</strong>. In short, this code selects an element where the attribute contains any instance of the specified value. <br> <br>
+        </p>
+
+
+        <p class = 'code'>
+        &lt;img src='/images/seasons/cold/winter.jpg'> <br>
+        &lt;img src='/images/seasons/warm/summer.jpg'> <br> <br>
+
+        img[src*='winter'] { <br>
+          height: 50px; <br>
+        } <br> <br>
+        
+        img[src*='summer'] { <br>
+          height: 100px; <br>
+        } <br> <br> </p>
+
+      <h4>Pseudo-class</h4>
+      <p>
+        Factors such as user interaction, site navigation, and position in the document tree can all give elements a different state with pseudo-class.
+
+        A pseudo-class can be attached to any selector. It is always written as a colon <strong>:</strong> followed by a name. For example <strong>p:hover</strong>.  <br> <br>  
+
+        <strong>:focus</strong>, <strong>:visited</strong>, <strong>:disabled</strong>, and <strong>:active</strong> are all pseudo-classes. <br> <br> </p>
+
+        <p class = 'code'>
+        p:hover { <br>
+          background-color: lime; <br>
+        } <br> <br> </p>
+
+        <p>
+        In the above code, whenever the mouse hovers over a paragraph element, that paragraph will have a lime-colored background. <br> <br>
+
+      </p>
+
+      <h4>Specificity</h4>
+      <p>
+        Specificity is the order by which the browser decides which CSS styles will be displayed. A best practice in CSS is to style elements while using the lowest degree of specificity so that if an element needs a new style, it is easy to override. <br> <br>
+        
+        IDs are the most specific selector in CSS, followed by classes, and finally, type.   <br> <br>   </p>
+        <p class = 'code'>
+        &lt;h1 class='headline'>Breaking News</h1> <br> <br>
+
+        h1 { <br>
+          color: red; <br>
+        } <br> <br>
+        
+        .headline { <br>
+          color: firebrick; <br>
+        } <br> <br>  </p>
+
+        <p>
+        In the example code above, the color of the heading would be set to firebrick, as the class selector is more specific than the type selector. If an ID attribute (and selector) were added to the code above, the styles within the ID selector’s body would override all other styles for the heading. <br> <br>
+
+        Over time, as files grow with code, many elements may have IDs, which can make CSS difficult to edit since a new, more specific style must be created to change the style of an element. <br> <br>
+
+        To make styles easy to edit, it’s best to style with a type selector, if possible. If not, add a class selector. If that is not specific enough, then consider using an ID selector. <br> <br>
+
+      </p>
+
+      <h4>Chaining</h4>
+      <p>
+        When writing CSS rules, it’s possible to require an HTML element to have two or more CSS selectors at the same time. <br> <br>
+
+        This is done by combining multiple selectors, which we will refer to as chaining. For instance, if there was a <strong>special</strong> class for &lt;h1> elements, the CSS would look like below: <br> <br> </p>
+        <p class = 'code'>
+        h1.<strong>special</strong> { <br> <br>
+ 
+        } <br> <br> </p>
+
+        <p>
+        The code above would select only the &lt;h1> elements with a class of special. If a &lt;p> element also had a class of special, the rule in the example would not style the paragraph. <br> <br>
+
+      </p>
+
+      <h4>Descendant Combinator</h4>
+      <p>
+        In addition to chaining selectors to select elements, CSS also supports selecting elements that are nested within other HTML elements, also known as <em>descendants</em>. <br> <br>
+
+        The nested &lt;li> elements are descendants of the &lt;ul> element and can be selected with the descendant combinator like so: <br> <br>
+        <p class = 'code'>
+        &lt;ul class='main-list'> <br>
+            &lt;li> ... &lt;/li> <br>
+            &lt;li> ... &lt;/li> <br>
+            &lt;li> ... &lt;/li> <br>
+          &lt;/ul>
+
+          .main-list li {
+  
+          }
+        </p>
+
+        <br> <br>
+
+      </p>
+
+      <h4>Multiple Selectors</h4>
+      <p>
+        In order to make CSS more concise, it’s possible to add CSS styles to multiple CSS selectors all at once. This prevents writing repetitive code. <br> <br>
+        <p class = 'code'>
+        h1, .menu { <br>
+          font-family: Georgia; <br>
+        } <br> </p>
+
+        <br> <br>
+
+      </p>
+
+  </section>
+
+  <section id = visual-rule>
+    <img src='https://cutewallpaper.org/21/bunny-girl-senpai-wallpaper/Rascal-Does-Not-Dream-of-Bunny-Girl-Senpai-HD-Wallpapers-and-.jpg' class = "center"/>
+      <h2 class = 'header'> Visual Rules </h2> 
+      <h4>Font Family</h4>
+      <p>
+        To change the typeface of text on your web page, you can use the font-family property. <br> <br>
+        <p class = 'code'>
+        h1 { <br>
+          font-family: Garamond; <br>
+        } </p>
+
+        <br> <br>
+
+      </p>
+
+      <h4>Font Size</h4>
+      <p>
+        To change the typeface of text on your web page, you can use the font-family property. <br> <br>
+        <p class = 'code'>
+        h1 { <br>
+          font-size: 18px; <br>
+        } </p>
+
+        <br> <br>
+
+      </p>
+
+      <h4>Font Weight</h4>
+      <p>
+        In CSS, the font-weight property controls how bold or thin text appears. <br> <br>
+        <p class = 'code'>
+        h1 { <br>
+          font-weight: bold; <br>
+        } </p>
+
+        <br> <br>
+
+      </p>
+
+      <h4>Text Align</h4>
+      <p>
+        To align text we can use the text-align property. The text-align property will align text to the element that holds it, otherwise known as its parent. <br> <br>
+
+        <em> left, right, center, justify </em> <br> <br>
+        <p class = 'code'>
+        h1 { <br>
+          text-aligned: right; <br>
+        } </p>
+
+        <br> <br>
+
+      </p>
+
+      <h4>Color and Background Color</h4>
+      <p>
+        Color can affect the following design aspects: <br> <br>
+
+        <ul>
+          <li> Foreground color - the color that an element appears in. </li>
+          <li> Background color - when a heading is styled so that its background appears yellow, the background color of the heading has been styled. </li>
+        </ul> <br> <br> </p>
+        <p>
+          In CSS, these two design aspects can be styled with the following two properties: <br> <br>
+
+        <ul>
+          <li> <strong>color</strong>: this property styles an element’s foreground color </li>
+          <li> <strong>background-color</strong>: this property styles an element’s background color
+ </li>
+        </ul> <br> <br>
+
+      </p>
+
+      <h4>Opacity</h4>
+      <p>
+        Opacity is the measure of how transparent an element is. It’s measured from 0 to 1, with 1 representing 100%, or fully visible and opaque, and 0 representing 0%, or fully invisible.
+        <br> <br>
+
+        Opacity can be used to make elements fade into others for a nice overlay effect. To adjust the opacity of an element, the syntax looks like this: 
+
+        <em> left, right, center, justify </em> <br> <br>
+        <p class = 'code'>
+        .overlay { <br>
+          opacity: 0.5; <br>
+        } </p>
+
+        <br> <br>
+
+      </p>
+
+      <h4>Background Image</h4>
+      <p>
+        CSS has the ability to change the background of an element. One option is to make the background of an element an image. This is done through the CSS property background-image. Its syntax looks like this:
+        <br> <br>
+
+        Opacity can be used to make elements fade into others for a nice overlay effect. To adjust the opacity of an element, the syntax looks like this:
+
+        <em> left, right, center, justify </em> <br> <br>
+        </p>
+        <p class = 'code'>
+        .main-banner { <br>
+          background-image: url('https://www.example.com/image.jpg'); <br>
+        } </p>
+
+        <p>
+        <ol>
+          <li> The <strong>background-image</strong> property will set the element’s background to display an image.</li>
+
+          <li> The value provided to background-image is a url. The url should be a URL to an image. The url can be a file within your project, or it can be a link to an external site. To link to an image inside an existing project, you must provide a relative file path. If there was an image folder in the project, with an image named mountains.jpg, the relative file path would look like below: </li>
+        </ol>
+
+       <br>
+
+      </p>
+
+      <h4>Important</h4>
+      <p>
+        <strong>!important</strong> can be applied to specific declarations, instead of full rules. It will override any style no matter how specific it is. As a result, it should almost never be used. Once !important is used, it is very hard to override.
+        <br> <br>
+        <p class = 'code'>
+        p { <br>
+          color: blue !important; <br>
+        } </p>
+
+        <br> <br>
+
+      </p>
+
+  </section>
+
+  <section id = box-model>
+    <img src='https://i.kym-cdn.com/photos/images/original/002/228/615/eb2.jpg' class = "center"/>
+    <h2 class = 'header'> Box Model </h2>
+
+      <p>
+        Introduction by a seemingly enthusiastic person on codecademy: <br> <br>
+
+        Browsers load HTML elements with default position values. This often leads to an unexpected and unwanted user experience while limiting the views you can create. In this lesson, you will learn about the box model, an important concept to understand how elements are positioned and displayed on a website. <br> <br>
+
+        If you have used HTML and CSS, you have unknowingly seen aspects of the box model. For example, if you have set the background color of an element, you may have noticed that the color was applied not only to the area directly behind the element but also to the area to the right of the element. Also, if you have aligned text, you know it is aligned relative to something. What is that something? <br> <br>
+
+        All elements on a web page are interpreted by the browser as “living” inside of a box. This is what is meant by the box model. <br> <br>
+
+        For example, when you change the background color of an element, you change the background color of its entire box. <br> <br>
+      </p>
+
+      <h4>The Box Model</h4>
+      <p>
+        The box model comprises the set of properties that define parts of an element that take up space on a web page. The model includes the content area’s size (width and height) and the element’s padding, border, and margin. The properties include:
+        <br> <br>
+
+        <ul id = "yuh">
+          <li> <strong>width</strong> and <strong>height</strong>: The width and height of the content area. </li>
+          <li> <strong>padding</strong>: The amount of space between the content area and the border. </li>
+          <li> <strong>border</strong>: The thickness and style of the border surrounding the content area and padding. </li>
+          <li> <strong>margin</strong>: The amount of space between the border and the outside edge of the element. </li>
+        </ul>
+
+        <img src='https://i.imgur.com/tuN4FzK.jpeg' class = "center"/>
+        <br> <br>
+
+      </p>
+
+      <h4>Height and Width</h4>
+      <p>
+        An element’s content has two dimensions: a height and a width. By default, the dimensions of an HTML box are set to hold the raw contents of the box. <br> <br>
+
+        The CSS <strong>height</strong> and <strong>width</strong> properties can be used to modify these default dimensions.
+        <br> <br> </p>
+        <p class = 'code'>
+        p { <br>
+          height: 80px; <br>
+          width: 240px; <br>
+        } <br> <br> </p>
+        <p>
+        Pixels allow you to set the exact size of an element’s box (width and height). When the width and height of an element are set in pixels, it will be the same size on all devices — an element that fills a laptop screen will overflow a mobile screen. <br> <br>
+      </p>
+
+      <h4>Borders</h4>
+      <p>
+        A border is a line that surrounds an element, like a frame around a painting. Borders can be set with a specific <strong>width</strong>, <strong>style</strong> - design of the border - and <strong>color</strong> - well you know what those are. <br> <br>
+
+        The CSS <strong>height</strong> and <strong>width</strong> properties can be used to modify these default dimensions.
+        <br> <br> </p>
+        <p class = 'code'>
+        p { <br>
+          height: 80px; <br>
+          width: 240px; <br>
+        } <br> <br> </p>
+        <p>
+        Pixels allow you to set the exact size of an element’s box (width and height). When the width and height of an element are set in pixels, it will be the same size on all devices — an element that fills a laptop screen will overflow a mobile screen. <br> <br>
+      </p>
+
+      <h4>Padding</h4>
+      <p>
+        The space between the contents of a box and the borders of a box is known as padding. Padding is like the space between a picture and the frame surrounding it. In CSS, you can modify this space with the <strong> padding </strong> property. <br> <br>
+
+        The padding property is often used to expand the background color and make the content look less cramped. <br> <br>
+
+        If you want to be more specific about the amount of padding on each side of a box’s content, you can use the following properties: <br> <br>
+
+        <strong>padding-top</strong> <br>
+        <strong>padding-right</strong> <br>
+        <strong>padding-bottom</strong> <br>
+        <strong>padding-left</strong> <br>
+
+        Another implementation of the <strong>padding</strong> property lets you specify exactly how much padding there should be on each side of the content in a single declaration. A declaration that uses multiple properties as values is known as a shorthand property. <br> <br>
+        <p class = 'code'>
+        padding: 6px 11px 4px 9px;
+        <br> <br> </p>
+      </p>
+
+      <h4>Border Radius</h4>
+      <p>
+        You can modify the corners of an element’s border box with the <strong>border-radius</strong> property. <br> <br>
+        border-radius: XXXpx; <br> <br>
+      </p>
+
+      <h4>Margin</h4>
+      <p>
+        Margin refers to the space directly outside of the box. The <strong>margin</strong> property is used to specify the size of this space. <br> <br>
+        
+        If you want to be more specific about the amount of padding on each side of a box’s content, you can use the following properties: <br> <br>
+
+        <strong>margin-top</strong> <br>
+        <strong>margin-right</strong> <br>
+        <strong>margin-bottom</strong> <br>
+        <strong>margin-left</strong> <br>
+      </p>
+
+      <h4>Auto</h4>
+      <p>
+        The <strong>margin</strong> property also lets you center content. However, you must follow a few syntax requirements. Take a look at the following example: <br> <br> </p>
+        <p class = 'code'>
+        div.headline { <br>
+        width: 400px; <br>
+        margin: 0 auto; <br>
+        } <br>  </p>
+
+        <p>
+        In the example above, margin: 0 auto; will center the divs in their containing elements. The 0 sets the top and bottom margins to 0 pixels. The auto value instructs the browser to adjust the left and right margins until the element is centered within its containing element. <br> <br>
+
+        In order to center an element, a width must be set for that element. Otherwise, the width of the div will be automatically set to the full width of its containing element, like the <body>, for example. It’s not possible to center an element that takes up the full width of the page, since the width of the page can change due to display and/or browser window size.
+        <br>
+        <br>
+      </p>
+
+      <h4>Margin Collapse</h4>
+      <p>
+        As you have seen, padding is space added inside an element’s border, while margin is space added outside an element’s border. One additional difference is that top and bottom margins, also called vertical margins, collapse, while top and bottom padding does not. <br> <br>
+
+        Horizontal margins (left and right), like padding, are always displayed and added together. For example, if two divs with ids #div-one and #div-two, are next to each other, they will be as far apart as the sum of their adjacent margins. <br> <br>
+        
+        <img src='https://i.imgur.com/fR0xq3m.jpeg' class = "center"/>
+
+      </p>
+
+      <h4>Minimum and Maximum Height and Width</h4>
+      <p>
+        Because a web page can be viewed through displays of differing screen size, the content on the web page can suffer from those changes in size. To avoid this problem, CSS offers two properties that can limit how narrow or how wide an element’s box can be sized to: <br> <br>
+
+        <strong>min-width</strong>—this property ensures a minimum width of an element’s box. <br>
+        <strong>max-width</strong>—this property ensures a maximum width of an element’s box. <br> <br>
+
+        You can also limit the minimum and maximum height of an element:
+
+        <strong>min-height</strong> — this property ensures a minimum height for an element’s box.
+        <strong>max-height</strong> — this property ensures a maximum height of an element’s box.
+      </p>
+
+      <h4>Overflow</h4>
+      <p>
+        All of the components of the box model comprise an element’s size.  <br> <br>
+
+        The overflow property controls what happens to content that spills, or overflows, outside its box. The most commonly used values are: <br> <br>
+
+        <strong>hidden</strong>—when set to this value, any content that overflows will be hidden from view. <br>
+        <strong>scroll</strong>—when set to this value, a scrollbar will be added to the element’s box so that the rest of the content can be viewed by scrolling. <br>
+        <strong>visible</strong>—when set to this value, the overflow content will be displayed outside of the containing element. Note, this is the default value. <br>
+      </p>
+        <p class = 'code'>
+        p {
+          overflow: scroll; 
+        } </p>
+
+    <h4>Visibility</h4>
+      <p>
+        Elements can be hidden from view with the <strong> visibility </strong> property.
+
+        The <strong>visibility</strong> property can be set to one of the following values:  <br> <br>
+
+        <strong>hidden</strong> — hides an element. <br>
+        <strong>visible</strong> — displays an element. <br>
+        <strong>collapse</strong> — collapses an element. <br>
+
+      </p>
+        <p class = 'code'>
+        .future {
+          visibility: hidden;
+        } </p>
+
+    <h3>CHANGING BOX MODEL</h3>
+    <h4>WAIT WAIT WAIT WHY ARE WE DOING THIS</h4>
+      <p>
+        The last lesson focused on the most important aspects of the box model: box dimensions, borders, padding, and margin. <br> <br>
+
+        The box model, however, has an awkward limitation regarding box dimensions. <br> <br>
+
+        Unfortunately, under the current box model, the border thickness and the padding will affect the dimensions of the box. <br> <br>
+
+        The 10 pixels of padding increases the height of the box to 220 pixels and the width to 320 pixels. Next, the 1-pixel thick border increases the height to 222 pixels and the width to 322 pixels. <br> <br>
+
+        Under this box model, the border thickness and padding are added to the overall dimensions of the box. This makes it difficult to accurately size a box. Over time, this can also make all of a web page’s content difficult to position and manage. <br> <br>
+        
+      </p>
+
+      <h4>Box Model: Content-Box</h4>
+      <p>
+        Many properties in CSS have a default value and don’t have to be explicitly set in the stylesheet. <br> <br>
+
+        For example, the default <strong>font-weight</strong> of text is <strong>normal</strong>, but this property-value pair is not typically specified in a stylesheet. <br> <br>
+
+        The same can be said about the box model that browsers assume. In CSS, the <strong>box-sizing</strong> property controls the type of box model the browser should use when interpreting a web page. <br> <br>
+
+        The default value of this property is <strong>content-box</strong>. This is the same box model that is affected by border thickness and padding. <br> <br>
+        
+        <img src='https://i.imgur.com/2O0BmNz.jpg' class = "center"/>
+
+      </p>
+
+      <h4>Box Model: Border-Box</h4>
+      <p>
+        Fortunately, we can reset the entire box model and specify a new one: border-box. </p>
+
+        <p class = 'code'>
+
+        * { <br>
+          box-sizing: border-box; <br>
+        }
+
+        </p>
+
+        <p>
+        The code in the example above resets the box model to border-box for all HTML elements. This new box model avoids the dimensional issues that exist in the former box model you learned about.
+
+        In this box model, the height and width of the box will remain fixed. The border thickness and padding will be included inside of the box, which means the overall dimensions of the box do not change. <br> <br>
+        
+        <img src='https://i.imgur.com/2owHVm8.jpg' class = "center"/>
+
+      </p>
+
+      <h4>The New Box Model</h4>
+      <p class = 'code'>
+        * {
+          box-sizing: border-box;
+        }
+      </p>
+      <p>
+        It’s that simple! In the example above, the universal selector (*) targets all elements on the web page and sets their box model to the border-box model.
+      </p>
+
+  </section>
+
+  <section id = dis-and-pos>
+    <img src='https://images4.alphacoders.com/100/1002615.jpg' class = "center"/>
+    <h2 class = 'header'> Display and Positioning </h2>
+
+      <h4>Flow of HTML</h4>
+      <p>
+        A browser will render the elements of an HTML document that has no CSS from left to right, top to bottom, in the same order as they exist in the document. This is called the flow of elements in HTML. <br> <br>
+
+        In addition to the properties that it provides to style HTML elements, CSS includes properties that change how a browser positions elements. These properties specify where an element is located on a page, if the element can share lines with other elements, and other related attributes. <br> <br>
+      </p>
+
+      <h4>Position</h4>
+      <p>
+        Block-level elements like these boxes create a block the full width of their parent elements, and they prevent other elements from appearing in the same horizontal space. <br> <br>
+
+        Block-level elements take up their own line of space and therefore don’t overlap each other. This is the default position for block-level elements. <br> <br>
+
+        The default position of an element can be changed by setting its position property. The position property can take one of five values: <br> <br> </p>
+
+        <p class = 'code'>
+          position: absolute;
+        </p>
+
+        <p>
+
+        <ul>
+          <li> static - the default value (does not need to be specified) </li>
+          <li> relative </li>
+          <li> absolute </li>
+          <li> fixed </li>
+          <li> sticky </li>
+        </ul> <br> <br>
+      </p>
+
+      <h4>Position: Relative</h4>
+      <p>
+        This value allows you to position an element relative to its default static position on the web page. </p>
+        <p class = 'code'>
+          .green-box {
+            background-color: green;
+            position: relative;
+          }
+        </p>
+        <p>
+        Although the code in the example above instructs the browser to expect a relative positioning of the .green-box element, it does not specify where the .green-box element should be positioned on the page. This is done by accompanying the position declaration with one or more of the following offset properties that will move the element away from its default static position: <br> <br>
+
+        <strong>top</strong> - moves the element down from the top. <br>
+        <strong>bottom</strong> - moves the element up from the bottom. <br>
+        <strong>left</strong> - moves the element away from the left side (to the right). <br>
+        <strong>right</strong> - moves the element away from the right side (to the left). <br> <br>
+        You can specify values in pixels, ems, or percentages, among others, to dial in exactly how far you need the element to move. It’s also important to note that offset properties will not work if the element’s position property is the default static. <br> <br>
+      </p>
+
+      <h4>Position: Absolute</h4>
+      <p>
+        When an element’s position is set to <strong>absolute</strong>, all other elements on the page will ignore the element and act like it is not present on the page. The element will be positioned relative to its closest positioned parent element, while offset properties can be used to determine the final position from there.  <br> <br>
+      </p>
+
+      <h4>Position: Fixed</h4>
+      <p>
+        When an element’s position is set to absolute, as in the last exercise, the element will scroll with the rest of the document when a user scrolls. <br> <br>
+
+        Fix an element to a specific position on the page (regardless of user scrolling) by setting its position to <strong>fixed</strong>, and accompanying it with the familiar offset properties top, bottom, left, and right. <br> <br>
+      </p>
+
+      <h4>Position: Sticky</h4>
+      <p>
+        Since static and relative positioned elements stay in the normal flow of the document, when a user scrolls the page (or parent element) these elements will scroll too. And since fixed and absolute positioned elements are removed from the document flow, when a user scrolls, these elements will stay at their specified offset position. <br> <br>
+
+        The <strong>sticky</strong> value is another position value that keeps an element in the document flow as the user scrolls, but sticks to a specified position as the page is scrolled further. This is done by using the sticky value along with the familiar offset properties, as well as one new one. <br> <br>
+      </p>
+
+      <h4>Z-Index</h4>
+      <p>
+        When boxes on a web page have a combination of different positions, the boxes (and therefore, their content) can overlap with each other, making the content difficult to read or consume. <br> <br> </p>
+      <p class = 'code'>
+          .blue-box { <br>
+            background-color: blue; <br>
+          } <br>
+          
+          .green-box { <br>
+            background-color: green; <br>
+            position: relative; <br>
+            top: -170px; <br>
+            left: 170px; <br>
+          } <br> </p>
+      <p>
+        In the example above, the .green-box element overlaps on top of the .blue-box element. <br> <br>
+
+        The <strong>z-index</strong> property controls how far back or how far forward an element should appear on the web page when elements overlap. This can be thought of as the depth of elements, with deeper elements appearing behind shallower elements. <br> <br>
+
+        The z-index property accepts integer values. Depending on their values, the integers instruct the browser on the order in which elements should be layered on the web page. <br> <br>
+        <p class = 'code'>
+          .blue-box { <br>
+            background-color: blue; <br>
+            position: relative; <br>
+            z-index: 1; <br>
+          } <br><br>
+          
+          .green-box { <br>
+            background-color: green; <br>
+            position: relative; <br>
+            top: -170px; <br>
+            left: 170px; <br>
+          } </p>
+        <p>
+        In the example above, we set the .blue-box position to relative and the z-index to 1. We changed position to relative, because the z-index property does not work on static elements. The z-index of 1 moves the .blue-box element forward, because the z-index value has not been explicitly specified for the .green-box element, which means it has a default z-index value of 0.  <br> <br>
+      </p>
+
+      <h4>Inline Display</h4>
+      <p>
+        Every HTML element has a default display value that dictates if it can share horizontal space with other elements. Some elements fill the entire browser from left to right regardless of the size of their content. Other elements only take up as much horizontal space as their content requires and can be directly next to other elements. <br> <br>
+
+        Three values for the display property: <strong>inline, block, and inline-block</strong>. <br> <br>
+
+        The default display for some elements, such as em, strong, and a, is called inline. Inline elements have a box that wraps tightly around their content, only taking up the amount of space necessary to display their content and not requiring a new line after each element. The height and width of these elements cannot be specified in the CSS document. inline elements cannot be altered in size with the height or width CSS properties. <br> <br>
+
+        The CSS display property provides the ability to make any element an inline element. This includes elements that are not inline by default such as paragraphs, divs, and headings. <br> <br> </p>
+        <p class = 'code'>
+            h1 { <br>
+              display: inline; <br>
+            } </p>
+        <p> 
+          The CSS in the example above will change the display of all h1 elements to inline. The browser will render h1 elements on the same line as other inline elements immediately before or after them (if there are any). <br> <br>
+      </p>
+
+    <h4>Display: Block</h4>
+      <p>
+        Some elements are not displayed in the same line as the content around them. These are called block-level elements. These elements fill the entire width of the page by default, but their width property can also be set. Unless otherwise specified, they are the height necessary to accommodate their content. <br> <br>
+
+        Elements that are block-level by default include all levels of heading elements, p, div and footer. <.p>
+        <p class = 'code'>
+          strong { <br>
+            display: block; <br>
+          } <br>
+        </p>
+      <p>  
+        In the example above, all strong elements will be displayed on their own line, with no content directly on either side of them even though their contents may not fill the width of most computer screens. <br> <br>
+      </p>
+
+    <h4>Display: Inline-Block</h4>
+      <p>
+        The third value for the display property is inline-block. Inline-block display combines features of both inline and block elements. Inline-block elements can appear next to each other and we can specify their dimensions using the width and height properties. Images are the best example of default inline-block elements. <br> <br>
+      <p class = 'code'>
+        &lt;div class="rectangle"> <br>
+          &lt;p>I’m a rectangle!&lt;/p> <br>
+        &lt;/div> <br>
+        &lt;div class="rectangle"> <br>
+          &lt;p>So am I!&lt;/p> <br>
+        &lt;/div> <br> <br>
+
+        .rectangle {  <br>
+          display: inline-block; <br>
+          width: 200px; <br>
+          height: 300px; <br>
+        } <br>
+      </p>
+      <p>
+        There are three rectangular divs that each contain a paragraph of text. The .rectangle divs will all appear inline (provided there is enough space from left to right) with a width of 200 pixels and height of 300 pixels, even though the text inside of them may not require 200 pixels by 300 pixels of space. <br> <br>
+      </p>
+
+    <h4>Float</h4>
+      <p>
+        If you’re simply interested in moving an element as far left or as far right as possible in the container, you can use the <strong>float</strong> property. <br> <br>
+
+        The float property is commonly used for wrapping text around an image. Note, however, that moving elements left or right for layout purposes is better suited for tools like CSS grid and flexbox, which you’ll learn about later on. <br> <br>
+
+        The float property is often set using one of the values below: <br> <br>
+
+        <strong>left</strong> - moves, or floats, elements as far left as possible. <br>
+        <strong>right</strong> - moves elements as far right as possible. <br> <br>
+    </p>
+
+    <h4>Clear</h4>
+      <p>
+        The float property can also be used to float multiple elements at once. However, when multiple floated elements have different heights, it can affect their layout on the page. Specifically, elements can “bump” into each other and not allow other elements to properly move to the left or right. <br> <br>
+
+        The <strong> clear </strong> property specifies how elements should behave when they bump into each other on the page. It can take on one of the following values: <br> <br>
+
+        <strong>left</strong>—the left side of the element will not touch any other element within the same containing element. <br>
+        <strong>right</strong>—the right side of the element will not touch any other element within the same containing element. <br>
+        <strong>both</strong>—neither side of the element will touch any other element within the same containing element. <br>
+        <strong>none</strong>—the element can touch either side. <br> <br>
+    </p>
+    </sectopm>
+
+    <section id = colour>
+    <img src='https://wallpaperaccess.com/full/1718875.jpg' class = "center"/>
+    <h2 class = 'header'> Colour </h2>
+
+      <h4>Foreground vs Background</h4>
+      <p>
+        Color can affect the following design aspects: <br> <br>
+
+        <strong>The foreground color </strong> <br>
+        <strong>The background color </strong> <br> <br>
+        
+        Foreground color is the color that an element appears in. For example, when a heading is styled to appear green, the foreground color of the heading has been styled. Conversely, when a heading is styled so that its background appears yellow, the background color of the heading has been styled. <br><br>
+
+        In CSS, these two design aspects can be styled with the following two properties: <br> <br>
+
+        <strong>color</strong> - this property styles an element’s foreground color. <br>
+        <strong>background-color</strong> - this property styles an element’s background color. <br> </p>
+        <p class = 'code'>
+          h1 { <br>
+            color: red; <br>
+            background-color: blue; <br>
+          }
+        </p>
+
+    <h4>Foreground vs Background</h4>
+      <p>
+        One syntax that we can use to specify colors is called hexadecimal. Colors specified using this system are called hex colors. A hex color begins with a hash character (#) which is followed by three or six characters. The characters represent values for red, blue and green.
+        <br> <br>
+        darkseagreen: #8FBC8F <br>
+        sienna:       #A0522D <br>
+        saddlebrown:  #8B4513 <br>
+        brown:        #A52A2A <br>
+        black:        #000000 or #000 <br>
+        white:        #FFFFFF or #FFF <br>
+        aqua:         #00FFFF or #0FF <br>
+      </p>
+
+    <h4>RBG Colours</h4>
+      <p>
+        There is another syntax for representing RGB values, commonly referred to as “RGB value” or just “RGB”, that uses decimal numbers rather than hexadecimal numbers, and it looks like this: </p>
+        <p class = 'code'>
+        h1 { <br>
+          color: rgb(23, 45, 23); <br>
+        } <br>
+        </p>
+        <p>
+        Each of the three values represents a color component, and each can have a decimal number value from 0 to 255. The first number represents the amount of red, the second is green, and the third is blue. These colors are exactly the same as hex, but with a different syntax and a different number system. 
+      </p>
+
+    <h4>Hue, Saturation, and Lightness</h4>
+      <p>
+        The syntax for HSL is similar to the decimal form of RGB, though it differs in important ways. The first number represents the degree of the hue, and can be between 0 and 360. The second and third numbers are percentages representing saturation and lightness respectively. Here is an example: <br> <br>
+
+        color: hsl(120, 60%, 70%); <br> <br>
+        <strong>Hue</strong> is the first number. It refers to an angle on a color wheel. Red is 0 degrees, Green is 120 degrees, Blue is 240 degrees, and then back to Red at 360. You can see an example of a color wheel below.
+        <br> <br>
+        <img src='https://i.imgur.com/b2oRthw.jpg' class = "center"/>
+        <br>
+        <strong>Saturation</strong> refers to the intensity or purity of the color. The saturation increases towards 100% as the color becomes richer. The saturation decreases towards 0% as the color becomes grayer. <br> <br>
+
+        <strong>Lightness</strong> refers to how light or dark the color is. Halfway, or 50%, is normal lightness. Imagine a sliding dimmer on a light switch that starts halfway. Sliding the dimmer up towards 100% makes the color lighter, closer to white. Sliding the dimmer down towards 0% makes the color darker, closer to black. <br> <br>
+      </p>
+
+    <h4>Opacity and Alpha</h4>
+      <p>
+        To use opacity in the HSL color scheme, use <strong>hsla</strong> instead of hsl, and four values instead of three. For example: <br><br> </p>
+      <p class = 'code'>
+        color: hsla(34, 100%, 50%, 0.1);
+      </p>
+      <p>
+          The first three values work the same as hsl. The fourth value (which we have not seen before) is the <em>alpha</em>. This last value is sometimes called opacity. <br> <br>
+
+          Alpha is a decimal number from zero to one. If alpha is zero, the color will be completely transparent. If alpha is one, the color will be opaque. The value for half-transparent would be 0.5. <br> <br>
+
+      <p class = 'code'>color: rgba(234, 45, 98, 0.33); </p>
+
+      <p>
+          A little unconventional, but still worth mentioning is how hex colors can also have an alpha value. By adding a two-digit hexadecimal value to the end of the six-digit representation (#52BC8280), or a one-digit hexadecimal value to the end of the three-digit representation (#F003), you can change the opacity of a hexadecimal color. Hex opacity ranges from 00 (transparent) to FF (opaque). <br> <br>
+
+          Alpha can only be used with HSL, RGB, and hex colors; we cannot add the alpha value to name colors like green. <br> <br>
+
+          There is, however, a named color keyword for zero opacity, transparent. It’s equivalent to rgba(0, 0, 0, 0), and it’s used like any other color keyword: </p>
+      <p class = 'code'>
+          color: transparent;
+      </p>
+      <br>
+    </section>
+
+    <section id = typography>
+      <img src='https://i.imgur.com/8ULYsRQ.jpeg' class = "center"/>
+      <h2 class = 'header'> Typography </h2>
+
+      <h4>Font Family</h4>
+      <p>
+        When specifying a typeface with multiple words, like Times New Roman, it is recommended to use quotation marks (' ') to group the words together: 'Times New Roman'. <br> <br>
+
+        Web safe fonts are good fallback fonts that can be used if your preferred font is not available. <br> <br>
+        <p class = 'code'>
+          h1 { <br>
+            font-family: Caslon, Georgia, 'Times New Roman'; <br>
+          }
+        </p>
+
+      <p>
+          In the example above, Georgia and Times New Roman are fallback fonts to Caslon. When you specify a group of fonts, you have what is known as a font stack. A font stack usually contains a list of similar-looking fonts. Here, the browser will first try to use the Caslon font. If that’s not available, it will try to use a similar font, Georgia. And if Georgia is not available, it will try to use Times New Roman. <br> <br>
+
+          You may be wondering what features make a font similar to another font. The fonts Caslon, Georgia, and Times New Roman are Serif fonts. Serif fonts have extra details on the ends of each letter, as opposed to Sans-Serif fonts, which do not have the extra details. <br>
+
+          <img src='https://content.codecademy.com/courses/web-101/htmlcss1-diagram__fontanatomy.svg' class = "center"/>
+      </p>
+
+      <h4>Font Weight</h4>
+        <p>
+          In CSS, the font-weight property controls how bold or thin text appears. It can be specified with keywords or numerical values. <br> <br> </p>
+
+          <p class = 'centr'><em>Keyword Values</em></p> <br>
+
+        <p>
+          The font-weight property can take any one of these keyword values: <br> <br>
+        
+          <strong>bold</strong>: Bold font weight. <br>
+          <strong>normal</strong>: Normal font weight. This is the default value. <br>
+          <strong>lighter</strong>: One font weight lighter than the element’s parent value. <br>
+          <strong>bolder</strong>: One font weight bolder than the element’s parent value <br> <br> </p>
+
+          <p class = 'centr'><em>Numeric Values</em></p> <br>
+        <p>
+          Numerical values can range from 1 (lightest) to 1000 (boldest), but it is common practice to use increments of 100. A font weight of 400 is equal to the keyword value normal, and a font weight of 700 is equal to bold. <br> </p> <br>
+          <p class = 'code'>
+            .left-section { <br>
+              font-weight: 700; <br>
+            } <br><br>
+                  
+            .right-section { <br>
+              font-weight: bold; <br>
+            } <br>
+          </p> <br>
+        
+        <p>
+          In the example above, text in elements of both .left-section and .right-section classes will appear bold.
+
+          It’s important to note that not all fonts can be assigned a numeric font weight, and not all numeric font weights are available to all fonts. It’s a good practice to look up the font you are using to see which font-weight values are available.
+        </p>
+
+      <h4>Font Style</h4>
+      <p>
+        You can also italicize text with the font-style property. <br> </p>
+          <p class = 'code'>
+            h3 { <br>
+              font-style: italic; <br>
+            }
+          </p>
+      <p>
+        The <strong>italic</strong> value causes text to appear in italics. The font-style property also has a normal value which is the default.
+      </p>
+
+      <h4>Text Transformation</h4>
+      <p>
+        Text can also be styled to appear in either all uppercase or lowercase with the <strong>text-transform</strong> property. <br> </p>
+          <p class = 'code'>
+            h1 { <br>
+              text-transform: uppercase; <br>
+            }
+          </p>
+      <p>
+        The code in the example above formats all h1 elements to appear in uppercase, regardless of the case used for the heading within the HTML code. Alternatively, the <strong>lowercase</strong> value could be used to format text in all lowercase.
+      </p>
+
+      <h4>Text Layout</h4>
+        <p class = 'code'>
+          p { <br>
+            <strong>letter-spacing</strong>: 2px; <br>
+            <strong>word-spacing</strong>: 0.3em; <br>
+            <strong>line-height</strong>: 1.4; <br>
+          }
+        </p>
+
+      <h4>Web Fonts Using &lt;link></h4>
+        <p class = 'code'>
+            &lt;head> <br>
+              // Add the link element for Google Fonts along with other metadata <br>
+              &lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"> <br>
+            &lt;/head> <br>
+           <br> <br>
+
+          p { <br>
+            font-family: 'Roboto', sans-serif; <br>
+          } <br>
+        </p>
+
+    </section>
+
+    <section id = the-end>
+      <p class = 'final'>
+        Thank you again, Codecademy, for this course &lt;333
+      </p>  
+    </section>
+
+    </div>
+    <div class="col-lg-3">
+      </div>
+
+</body>
+
+</html>
