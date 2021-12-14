@@ -1,0 +1,133 @@
+* { 
+  color: rgb(255, 255, 255);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: rgb(39, 39, 39);  
+}
+
+/* #syntax-and-selectors, #visual-rule, .vsc-initialized, html{
+  margin-left: 150px;
+  margin-right: 150px;
+} */
+
+.final {
+  border-top: 3px solid white;
+  font-size: 30px;
+  letter-spacing: 2px;
+  line-height: 2;
+  font-family: 'Corinthia', cursive;
+  text-align: center;
+}
+
+.header {
+  border: 3px solid lightslategray;
+  box-sizing: border-box;
+  text-transform: uppercase;
+}
+
+p, ul, ol {
+  font-size: 15px;
+  /* margin-left: 150px;
+  margin-right: 150px; */
+}
+
+h1 {
+  font-family: 'Poiret One', cursive;
+}
+
+h1, h2, h3, h4, h5 {
+  text-align: center;
+}
+
+img {
+  text-align: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+/* #yuh {
+  margin-left: 400 !important;
+  margin-right: 400 !important;
+} */
+
+#ok {
+  /* margin-left: 400px !important;
+  margin-right: 500px !important; */
+  background-color: grey;
+  color: black;
+}
+
+.share {
+  border-bottom: 3px solid lightslategray;
+  padding: 40px 0px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.share a {
+  background: lightslategray	;
+  border: 1px solid lightslategray	;
+  border-radius: 3px;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+  padding: 14px;
+}
+
+.share a:hover {
+  background: white;
+  border: 1px solid lightslategray;
+  color: lightslategray	;
+}
+
+.code {
+  background: white;
+  color: black;
+  text-align: left;
+  padding-left: 30px;
+  padding: 30px;
+  border-radius: 3px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.back {
+  background: grey;
+  border: 1px solid black;
+  border-radius: 2px;
+  color: white;
+  display: inline-block;
+  position: fixed;
+  bottom: 5px;
+  right: 15px;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.back a {
+   background: grey;
+  border: 1px solid black;
+  border-radius: 2px;
+  color: white;
+  display: inline-block;
+  position: fixed;
+  bottom: 5px;
+  right: 15px;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.back a:hover {
+  background: white;
+  border: 1px solid white;
+  color: black	;
+}
+
+.centr {
+  font-weight: bold;
+  text-align: center;
+}
